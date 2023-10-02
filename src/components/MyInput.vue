@@ -2,7 +2,7 @@
   <input
     type="text"
     :value="modelValue"
-    @input="emit('update:model-value', 'dwq')"
+    @input="(e) =>emit('update:model-value', ( e.target as HTMLInputElement).value as T)"
   />
 </template>
 
