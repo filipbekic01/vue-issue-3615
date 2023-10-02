@@ -1,17 +1,17 @@
-<script setup lang="ts" generic="T extends string | undefined | null">
+<template>
+  <input
+    type="text"
+    :value="modelValue"
+    @input="emit('update:model-value', 'dwq')"
+  />
+</template>
+
+<script setup lang="ts" generic="T extends string">
 defineProps<{
   modelValue: T;
 }>();
 
 const emit = defineEmits<{
-  (e: "update:model-value", modelValue: T): void;
+  (e: "update:model-value", value: T): void;
 }>();
 </script>
-
-<template>
-  <input
-    type="text"
-    :model-value="modelValue"
-    @input="(e) => emit('update:model-value', e)"
-  />
-</template>

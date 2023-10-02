@@ -1,9 +1,13 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from "vue";
+import MyInput from "./components/MyInput.vue";
 
-const name = ref('test');
+const firstName = ref("test");
 </script>
 
 <template>
- <MyInput :model-value="name" @update:model-value="(e) => name = e"/>
+  <MyInput
+    :model-value="firstName"
+    @update:model-value="(e) => (firstName = e)"
+  />
 </template>
